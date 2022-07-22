@@ -1,0 +1,35 @@
+﻿function init() {
+    let modals = document.querySelector(".modals");
+    let text = [
+        "What is the oldest thing you can see? At 2.5 million light years distant, the answer for the unaided eye is the Andromeda galaxy, because its photons are 2.5 million years old when they reach you. Most other apparent denizens of the night sky -- stars, clusters, and nebulae -- appear as they were only a few hundred to a few thousand years ago, as they lie well within our own Milky Way Galaxy. Given its distance, light from Andromeda is likely also the farthest object that you can see. Also known as M31, the Andromeda Galaxy dominates the center of the featured zoomed image, taken from the Sahara Desert in Morocco last month. The featured image is a combination of three background and one foreground exposure -- all taken with the same camera and from the same location and on the same calendar day -- with the foreground image taken during the evening blue hour. M110, a satellite galaxy of Andromenda is visible just above and to the left of M31's core. As cool as it may be to see this neighboring galaxy to our Milky Way with your own eyes, long duration camera exposures can pick up many faint and breathtaking details. Recent data indicates that our Milky Way Galaxy will collide and combine with the similarly-sized Andromeda galaxy in a few billion years.",
+        "Three thousand light-years away, a dying star throws off shells of glowing gas. This image from the Hubble Space Telescope reveals the Cat's Eye Nebula (NGC 6543), to be one of the most complex planetary nebulae known. Spanning half a light-year, the features seen in the Cat's Eye are so complex that astronomers suspect the bright central object may actually be a binary star system. The term planetary nebula, used to describe this general class of objects, is misleading. Although these objects may appear round and planet-like in small telescopes, high resolution images with large telescopes reveal them to be stars surrounded by cocoons of gas blown off in the late stages of stellar evolution. Gazing into this Cat's Eye, astronomers may well be seeing more than detailed structure, they may be seeing the fate of our Sun, destined to enter its own planetary nebula phase of evolution ... in about 5 billion years.",
+        "This moon is doomed.Mars, the red planet named for the Roman god of war, has two tiny moons, Phobos and Deimos, whose names are derived from the Greek for Fear and Panic.These martian moons may well be captured asteroids originating in the main asteroid belt between Mars and Jupiter or perhaps from even more distant reaches of our Solar System.The larger moon, Phobos, is indeed seen to be a cratered, asteroid - like object in this stunning color image from the robotic Mars Reconnaissance Orbiter, with objects as small as 10 meters visible.But Phobos orbits so close to Mars - about 5, 800 kilometers above the surface compared to 400, 000 kilometers for our Moon - that gravitational tidal forces are dragging it down.In perhaps 50 million years, Phobos is expected to disintegrate into a ring of debris.",
+        " A solar filament is an enormous stream of incandescent plasma suspended above the active surface of the Sun by looping magnetic fields. Seen against the solar disk it looks dark only because it's a little cooler, and so slightly dimmer, than the solar photosphere. Suspended above the solar limb the same structure looks bright when viewed against the blackness of space and is called a solar prominence. A filaprom would be both of course, a stream of magnetized plasma that crosses in front of the solar disk and extends beyond the Sun's edge. In this hydrogen-alpha close-up of the Sun captured on June 22, active region AR3038 is near the center of the frame. Active region AR3032 is seen at the far right, close to the Sun's western limb. As AR3032 is carried by rotation toward the Sun's visible edge, what was once a giant filament above it is now partly seen as a prominence, How big is AR3032's filaprom? For scale planet Earth is shown near the top right corner.",
+        "There are four Full Supermoons in 2022. Using the definition of a supermoon as a Full Moon near perigee, that is within at least 90% of its closest approach to Earth in a given orbit, the year's Full Supermoon dates are May 16, June 14, July 13, and August 12. Full Moons near perigee really are the brightest and largest in planet Earth's sky. But size and brightness differences between Full Moons are relatively small and an actual comparison with other Full Moons is difficult to make by eye alone. Two exposures are blended in this supermoon and sky view from June 14. That Full Moon was also known to northern hemisphere skygazers as the Strawberry moon. The consecutive short and long exposures allow familiar features on the fully sunlit lunar nearside to be seen in the same image as a faint lunar corona and an atmospheric cloudscape. They were captured in skies over Chongqing, China.",
+        "Yes, but have you ever seen all of the planets at once? A rare roll-call of planets has been occurring in the morning sky for much of June. The featured fisheye all-sky image, taken a few mornings ago near the town of San Pedro de Atacama in Chile, caught not only the entire planet parade, but the Moon between Mars and Venus. In order, left to right along the ecliptic plane, members of this Solar System family portrait are Earth, Saturn, Neptune, Jupiter, Mars, Uranus, Venus, Mercury, and Earth. To emphasize their locations, Neptune and Uranus have been artificially enhanced. The volcano just below Mercury is Licancabur. In July, Mercury will move into the Sun's glare but reappear a few days later on the evening side. Then, in August, Saturn will drift past the direction opposite the Sun and so become visible at dusk instead of dawn. The next time that all eight planets will be simultaneously visible in the evening sky will be in 2122."
+    ];
+    let images = document.querySelectorAll(".image");
+
+    for (let image of images) {
+        let modal = `<div class="modal fade" id="${image.dataset.bsTarget.split("#")[1]}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Explanation</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				${text[image.dataset.bsTarget.split("#modal")[1]-1]}
+			</div >
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+            </div>
+		</div >
+	</div >
+</div > `
+        modals.insertAdjacentHTML("beforeend", modal)
+    }
+}
+
+init();
